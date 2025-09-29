@@ -6,7 +6,7 @@ import { Trophy, Flame, Star } from 'lucide-react';
 
 interface LeaderboardEntryProps {
   entry: LeaderboardEntryType;
-  variant?: 'default' | 'userHighlight';
+  variant?: 'default' | 'userHighlight' | 'highlight';
   isCurrentUser?: boolean;
 }
 
@@ -43,6 +43,7 @@ export function LeaderboardEntry({
     <div className={cn(
       "leaderboard-entry",
       variant === 'userHighlight' && "bg-accent bg-opacity-20 border-accent",
+      variant === 'highlight' && "bg-gradient-to-r from-yellow-400 to-amber-500 bg-opacity-10 border-yellow-400",
       isCurrentUser && "ring-2 ring-accent ring-opacity-50",
       getRankStyle(entry.rank)
     )}>
