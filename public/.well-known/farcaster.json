@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "EduSpin",
+    "subtitle": "Built with Zara",
+    "description": "EduSpin is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://c23c326e34a2475d8b8c61f52c878f82-olua.vercel.app",
+    "splashImageUrl": "https://c23c326e34a2475d8b8c61f52c878f82-olua.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://c23c326e34a2475d8b8c61f52c878f82-olua.vercel.app/image.png",
+    "tagline": "EduSpin",
+    "screenshotUrls": [
+      "https://c23c326e34a2475d8b8c61f52c878f82-olua.vercel.app/screenshot.png",
+      "https://c23c326e34a2475d8b8c61f52c878f82-olua.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://c23c326e34a2475d8b8c61f52c878f82-olua.vercel.app/api/webhook"
+  }
+}
