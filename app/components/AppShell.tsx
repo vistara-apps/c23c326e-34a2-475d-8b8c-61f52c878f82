@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Home, Trophy, Star, User, Settings2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -10,14 +12,14 @@ interface AppShellProps {
 }
 
 export function AppShell({ children, variant = 'default' }: AppShellProps) {
-  const [activeTab, setActiveTab] = useState('home');
+  const pathname = usePathname();
 
   const tabs = [
-    { id: 'home', icon: Home, label: 'Home' },
-    { id: 'leaderboard', icon: Trophy, label: 'Leaderboard' },
-    { id: 'rewards', icon: Star, label: 'Rewards' },
-    { id: 'profile', icon: User, label: 'Profile' },
-    { id: 'settings', icon: Settings2, label: 'Settings' },
+    { id: 'home', path: '/', icon: Home, label: 'Home' },
+    { id: 'leaderboard', path: '/leaderboard', icon: Trophy, label: 'Leaderboard' },
+    { id: 'rewards', path: '/rewards', icon: Star, label: 'Rewards' },
+    { id: 'profile', path: '/profile', icon: User, label: 'Profile' },
+    { id: 'settings', path: '/settings', icon: Settings2, label: 'Settings' },
   ];
 
   return (
@@ -50,22 +52,22 @@ export function AppShell({ children, variant = 'default' }: AppShellProps) {
         <div className="flex items-center justify-around">
           {tabs.map((tab) => {
             const Icon = tab.icon;
-            const isActive = activeTab === tab.id;
-            
+            const isActive = pathname === tab.path;
+
             return (
-              <button
+              <Link
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                href={tab.path}
                 className={cn(
                   "flex flex-col items-center space-y-1 p-2 rounded-lg transition-all duration-200",
-                  isActive 
-                    ? "text-accent bg-accent bg-opacity-20" 
+                  isActive
+                    ? "text-accent bg-accent bg-opacity-20"
                     : "text-text-secondary hover:text-fg"
                 )}
               >
                 <Icon size={20} />
                 <span className="text-xs font-medium">{tab.label}</span>
-              </button>
+              </Link>
             );
           })}
         </div>

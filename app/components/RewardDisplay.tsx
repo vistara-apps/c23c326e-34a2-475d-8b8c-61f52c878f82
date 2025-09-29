@@ -8,7 +8,7 @@ interface RewardDisplayProps {
   reward: RewardItem;
   userPoints: number;
   onRedeem: (rewardId: string) => void;
-  variant?: 'points' | 'badge' | 'crypto';
+  variant?: 'points' | 'badge' | 'crypto' | 'customization';
   disabled?: boolean;
 }
 
@@ -28,6 +28,8 @@ export function RewardDisplay({
         return <Coins className="w-6 h-6" />;
       case 'badge':
         return <Star className="w-6 h-6" />;
+      case 'customization':
+        return <Palette className="w-6 h-6" />;
       case 'points':
       default:
         return <Palette className="w-6 h-6" />;
@@ -40,6 +42,8 @@ export function RewardDisplay({
         return 'border-yellow-400 bg-yellow-400 bg-opacity-10';
       case 'badge':
         return 'border-purple-400 bg-purple-400 bg-opacity-10';
+      case 'customization':
+        return 'border-pink-400 bg-pink-400 bg-opacity-10';
       default:
         return 'border-blue-400 bg-blue-400 bg-opacity-10';
     }
